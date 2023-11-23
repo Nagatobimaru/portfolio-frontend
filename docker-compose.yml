@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  portfolio-frontend:
+    platform: linux/x86_64
+    container_name: portfolio-frontend
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./:/app
+      - nuxtjs-node-modules:/app/node_modules
+    ports:
+      - 3000:3000
+    restart: always
+    networks:
+      - portfolio
+
+# ==============================================================================
+# Volumes
+# ==============================================================================
+volumes:
+  nuxtjs-node-modules:
+    driver: local
+
+# ==============================================================================
+# Networks
+# ==============================================================================
+networks:
+  portfolio:
+    driver: bridge
