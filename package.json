@@ -56,5 +56,8 @@
   },
   "dependencies": {
     "@kevinmarrec/nuxt-pwa": "^0.17.0"
+  },
+  "engines": {
+    "node": ">= 18"
   }
 }

@@ -1,6 +1,4 @@
 {
-    "cSpell.words": [
-        "stylelint",
-    ],
-    "editor.formatOnSave": true
+  "cSpell.words": ["stylelint"],
+  "editor.formatOnSave": true
 }
