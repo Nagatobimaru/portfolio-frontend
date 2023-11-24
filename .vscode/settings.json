@@ -1,4 +1,11 @@
 {
-  "cSpell.words": ["stylelint"],
+  "cSpell.words": [
+    "stylelint",
+    "modyfi",
+    "originjs",
+    "kevinmarrec",
+    "nuxt",
+    "crossorigins"
+  ],
   "editor.formatOnSave": true
 }
