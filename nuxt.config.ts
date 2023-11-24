@@ -3,10 +3,18 @@ import {esbuildCommonjs} from '@originjs/vite-plugin-commonjs';
 import {defineNuxtConfig} from 'nuxt/config';
 import viteCompression from 'vite-plugin-compression';
 import ViteCSSExportPlugin from 'vite-plugin-css-export';
+import vuetify from 'vite-plugin-vuetify';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@kevinmarrec/nuxt-pwa'],
+  modules: [
+    '@kevinmarrec/nuxt-pwa',
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', config => {
+        config.plugins?.push(vuetify());
+      });
+    },
+  ],
 
   app: {
     head: {
@@ -49,6 +57,17 @@ export default defineNuxtConfig({
       ],
     },
   },
+
+  build: {
+    transpile: ['vuetify'],
+  },
+
+  css: [
+    // TODO: optimize mdi icon bundle size
+    // https://vuetifyjs.com/en/features/icon-fonts/#material-design-icons-js-svg
+    // '@mdi/font/css/materialdesignicons.min.css',
+    'vuetify/lib/styles/main.sass',
+  ],
 
   vite: {
     css: {

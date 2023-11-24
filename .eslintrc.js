@@ -61,6 +61,6 @@ module.exports = {
     ],
 
     // avoid to detect the v-skeleton-loader. we use this experimental feature
-    // 'vuetify/no-deprecated-components': 0,
+    'vuetify/no-deprecated-components': 0,
   },
 };

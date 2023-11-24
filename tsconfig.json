@@ -20,7 +20,7 @@
       "@/*": ["./*"],
       "#imports": [".nuxt/imports"]
     },
-    "types": ["@types/node"]
+    "types": ["vuetify", "@types/node"]
   },
   "exclude": ["node_modules", "dist"],
   "include": ["*/**/*.ts", "*/**/*.vue", ".d.ts", "./.nuxt/nuxt.d.ts"]
